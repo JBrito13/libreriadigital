@@ -1,0 +1,28 @@
+#navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #182F41;
+    padding: 1rem;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+#headLogo {
+    width: 100px;
+    height: 100px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.headLink {
+    text-decoration: none;
+    color: #ECF2F2;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-right: 1rem;
+}
+
+.headLink:hover {
+    color: #C9CED0;
+    cursor: pointer;
+}

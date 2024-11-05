@@ -1,0 +1,31 @@
+<app-header></app-header>
+
+<div class="w-100 flex justify-center flex-col">
+    <div class="flex flex-row justify-center">
+        <div class="flex flex-col col-md-6 card">
+            <div class="flex-row flex justify-center">
+              <div class="w-100 items-center flex flex-col">
+                <h1 class="title">Contacto</h1>
+                <p class="text">Envíanos un mensaje</p>
+              </div>
+            </div>
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="flex flex-col w-80">
+                <mat-label for="name">Nombre</mat-label>
+                <mat-form-field appearance="outline" class="form-group">
+                    <input matInput type="text" class="form-control" id="name" formControlName="name">
+                </mat-form-field>
+                <mat-label for="email">Email</mat-label>
+                <mat-form-field appearance="outline" class="form-group">
+                    <input matInput type="email" class="form-control" id="email" formControlName="email">
+                </mat-form-field>
+                <mat-label for="message">Mensaje</mat-label>
+                <mat-form-field appearance="outline" class="form-group">
+                    <textarea matInput class="resize-none" id="message" formControlName="message"></textarea>
+                </mat-form-field>
+                <button mat-raised-button color="primary" type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
