@@ -1,10 +1,15 @@
+// Angular Imports
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
-import { MenuOptionsComponent } from './components/menu-options/menu-options.component';
+import { CommonModule } from '@angular/common';
 
+// Modules
+import { MaterialModule } from '../material/material.module';
+
+// Components
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { MenuOptionsComponent } from './components/menu-options/menu-options.component';
 
 
 @NgModule({
@@ -15,11 +20,13 @@ import { MenuOptionsComponent } from './components/menu-options/menu-options.com
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MaterialModule
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MenuOptionsComponent
   ]
 })
 export class SharedModule { }

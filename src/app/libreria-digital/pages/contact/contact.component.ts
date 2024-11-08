@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -9,9 +9,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class ContactComponent {
 
   contactForm: FormGroup = this.fb.group({
-    name: [''],
-    email: [''],
-    message: [''],
+    name: ['', [Validators.required, Validators.minLength(3)]],
+    email: ['', [Validators.required, Validators.email]],
+    message: ['', [Validators.required, Validators.minLength(10)]],
   });
 
   constructor(
@@ -20,6 +20,14 @@ export class ContactComponent {
 
   onSubmit() {
     console.log(this.contactForm.value);
+
+    if (this.contactForm.invalid) {
+      return;
+    }
+
+    // Send the form data to the server
+
+    this.contactForm.reset();
   }
 
 }
